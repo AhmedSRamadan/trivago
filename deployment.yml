@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trivago
+spec:
+  selector:
+    matchLabels:
+      app: trivago
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: trivago
+    spec:
+      containers:
+      - name: trivago
+        image: trivago-image
+        ports:
+        - containerPort: 80
